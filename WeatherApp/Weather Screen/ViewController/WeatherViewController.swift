@@ -36,23 +36,20 @@ class WeatherViewController: UIViewController
 
         initialViewSetup()
         initialCollectionCellSetup()
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.navigationController!.isNavigationBarHidden = false
         
+        self.navigationController!.isNavigationBarHidden = false
         self.getWeatherData()
     }
     
-    func initialCollectionCellSetup()
-    {
-        self.weatherCollectionView.register(UINib.init(nibName: "WeatherCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WeatherCollectionViewCell")
-    }
+
     
     //Intial Setup
+    
     
     func initialViewSetup()
     {
@@ -65,10 +62,15 @@ class WeatherViewController: UIViewController
         self.weatherMetric = "Tmax"
         
         self.locationName = locationData.first
-
-
     }
     
+    func initialCollectionCellSetup()
+    {
+        self.weatherCollectionView.register(UINib.init(nibName: "WeatherCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "WeatherCollectionViewCell")
+    }
+    
+    
+    //Picker Hide Show Animation
     func hideShowPicker()
     {
         UIView.animate(withDuration: 0.3)
@@ -89,7 +91,6 @@ class WeatherViewController: UIViewController
     }
     
     //Webservice Call
-    
     func getWeatherData()
     {
         guard let location = self.locationName else
@@ -104,8 +105,7 @@ class WeatherViewController: UIViewController
         weatherVM.checkFileAvailablityInDirectory(forLocation: location, weatherMetrics: metric)
     }
     
-    //Segment Controller
-    
+    //Segment Controller Action
     @IBAction func setSelectedSegment(_ sender: UISegmentedControl)
     {
         if metricesSegmentedControl.selectedSegmentIndex == 0
@@ -125,7 +125,6 @@ class WeatherViewController: UIViewController
     }
     
     //Button Action
-    
     @IBAction func citySelectButtonAction(_ sender: UIButton)
     {
         self.hideShowPicker()

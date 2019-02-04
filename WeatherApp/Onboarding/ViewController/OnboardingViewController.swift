@@ -20,7 +20,6 @@ class OnboardingViewController: UIViewController
         super.viewDidLoad()
         
         self.initialCollectionCellSetup()
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -34,7 +33,7 @@ class OnboardingViewController: UIViewController
     {
         self.onboardCollectionView.register(UINib.init(nibName: "OnboardingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
     }
-
+    
 }
 
 extension OnboardingViewController: OnboardingRedirectionDelegate

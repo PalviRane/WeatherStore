@@ -49,6 +49,6 @@ class OnboardingCollectionViewCell: UICollectionViewCell
         delegate?.redirectToHome()
     }
     
-
+    
 }
 
