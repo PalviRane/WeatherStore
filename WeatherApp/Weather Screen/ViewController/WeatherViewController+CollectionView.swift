@@ -12,7 +12,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
 {
     func numberOfSections(in collectionView: UICollectionView) -> Int
     {
-        guard let weatherGroupArray = weatherVM.weatherGroupArray else
+        guard let weatherGroupArray = weatherVM.weatherSortedArray else
         {
             return 0
         }
@@ -22,20 +22,6 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 13
-//        }
-//        else
-//        {
-//            guard let weatherGroupArray = weatherVM.weatherGroupArray else
-//            {
-//                return 0
-//            }
-//
-//            let currentGroup = weatherGroupArray[section-1]
-//
-//            return currentGroup.count+1
-//        }
-//
-//
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -49,7 +35,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         else
         {
-            guard let weatherGroupArray = weatherVM.weatherGroupArray else
+            guard let weatherGroupArray = weatherVM.weatherSortedArray else
             {
                 return dataCell
             }
@@ -58,18 +44,16 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
             
             if indexPath.row == 0
             {
-                guard let currentData = currentGroup[indexPath.row] else
-                {
-                    return dataCell
-                }
+                let currentDataArray = currentGroup.value
+                let currentData = currentDataArray[indexPath.row]
+              
                 dataCell.setupCellForYear(WithData: currentData)
             }
             else
             {
-                guard let currentData = currentGroup[indexPath.row-1] else
-                {
-                    return dataCell
-                }
+                let currentDataArray = currentGroup.value
+                let currentData = currentDataArray[indexPath.row-1]
+                
                 dataCell.setupCell(WithData: currentData)
             }
         }

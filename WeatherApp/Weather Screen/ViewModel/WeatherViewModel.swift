@@ -25,7 +25,7 @@ extension WeatherDelegate
 class WeatherViewModel: NSObject
 {
     var weatherDataArray: [WeatherModel]?
-    var weatherGroupArray:[[WeatherModel?]]?
+    var weatherSortedArray:[(key: Int?, value: [WeatherModel])]?
     
     var delegate : WeatherDelegate?
     
@@ -146,13 +146,11 @@ class WeatherViewModel: NSObject
     {
         guard let weatherData = weatherDataArray else { return }
         
-        //Remove Duplicate Groups
-        var crossReference = Dictionary(grouping: weatherData, by: { $0.year })
+        //Group Data
+        var groupedDictionary = Dictionary(grouping: weatherData, by: { $0.year })
+        let sortedArray = groupedDictionary.sorted(by: { $0.key as Int! < $1.key as Int!})
         
-        let dictionaryToArray = Array(crossReference.values)
-
-        self.weatherGroupArray = dictionaryToArray
-        
+        self.weatherSortedArray = sortedArray
         
         delegate?.reloadWeatherData(success: true)
     }
