@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +17,50 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Mob-nw-JBa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbJ-Fe-69Y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeatherApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bL-Ui-EWO">
+                                        <rect key="frame" x="15" y="305.5" width="345" height="56"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="40"/>
+                                        <color key="textColor" red="0.28235294119999998" green="0.61568627450000002" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="1" height="-1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4bL-Ui-EWO" secondAttribute="trailing" constant="15" id="HKE-1Y-mnb"/>
+                                    <constraint firstItem="4bL-Ui-EWO" firstAttribute="centerY" secondItem="dbJ-Fe-69Y" secondAttribute="centerY" id="cG4-xS-UHf"/>
+                                    <constraint firstItem="4bL-Ui-EWO" firstAttribute="leading" secondItem="dbJ-Fe-69Y" secondAttribute="leading" constant="15" id="rSu-ON-iaP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbJ-Fe-69Y" secondAttribute="trailing" id="41i-r1-zbW"/>
+                            <constraint firstItem="dbJ-Fe-69Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5uG-Cs-kHC"/>
+                            <constraint firstItem="Mob-nw-JBa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7hF-wi-ick"/>
+                            <constraint firstItem="dbJ-Fe-69Y" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9gp-Is-KdL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dbJ-Fe-69Y" secondAttribute="bottom" id="TWR-Bz-Wrp"/>
+                            <constraint firstItem="Mob-nw-JBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cAJ-rU-57p"/>
+                            <constraint firstItem="Mob-nw-JBa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kyf-FV-hRE"/>
+                            <constraint firstItem="Mob-nw-JBa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zXy-z3-Iaz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage.jpg" width="1280" height="720"/>
+    </resources>
 </document>
