@@ -30,7 +30,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         
-        return CGSize(width: screenWidth, height: screenHeight)
+        return CGSize(width: screenWidth, height: screenHeight+20)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)

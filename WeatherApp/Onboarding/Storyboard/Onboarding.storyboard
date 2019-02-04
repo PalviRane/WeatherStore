@@ -52,6 +52,7 @@
                         <viewLayoutGuide key="safeArea" id="Pwo-kn-hlG"/>
                     </view>
                     <navigationItem key="navigationItem" id="oma-HZ-HxK"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imagesPageControl" destination="kxE-Dh-v2C" id="brb-Pp-So5"/>
                         <outlet property="onboardCollectionView" destination="nqN-h1-S2G" id="zIz-CP-JN2"/>
